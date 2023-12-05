@@ -1,13 +1,9 @@
-import javax.naming.PartialResultException;
-import javax.swing.*;
-import java.util.Scanner;
-
 public class Home_work {
 
-    public static void main (String[] arg){
-        int check = 12121212;
-        System.out.println(" Tổng là: " + sumOfNumber(check));
-    }
+//    public static void main (String[] arg){
+//        int check = 12121212;
+//        System.out.println(" Tổng là: " + sumOfNumber(check));
+//    }
 //    public static void findMax(int[] arr){
 //        int maxArr = arr[0];
 //        for (int i = 0; i < arr.length; i++){
@@ -74,13 +70,39 @@ public class Home_work {
 //        }
 //    }
 
-    public static int sumOfNumber(int  number){
-        int sum = 0;
-        while (number != 0){
-            sum += number%10;
-            number /= 10;
+//    public static int sumOfNumber(int  number){
+//        int sum = 0;
+//        while (number != 0){
+//            sum += number%10;
+//            number /= 10;
+//        }
+//        return sum;
+//    }
+
+    public static void sort (int [] arr){
+        for(int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr.length - 1; j++){
+                if(arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
         }
-        return sum;
+    }
+
+    public static int findK (int [] arr , int k){
+        int count = 1;
+        sort(arr);
+        for (int i = arr.length - 1; i > 0; i--) {
+            if(arr[i] != arr[i-1]){
+                count++;
+            }
+            if(count == k){
+                return arr[i];
+            }
+        }
+        return count;
     }
 
 
