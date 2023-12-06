@@ -3,46 +3,43 @@ import java.util.Scanner;
 public class Homework2 {
 
 
-//    public static void main(String[] arg){
-//        int [][] matrix = {
-//                {4,5,9},
-//                {4,5,9},
-//                {7,9,9}
-//        };
-//
-//
+    public static void main(String[] arg){
+        int [][] matrix = {
+                {4,5,9},
+                {4,5,9},
+                {7,9,9}
+        };
+
 //
 ////        Viết một chương trình java để tìm giá trị lớn nhất
 ////        trong một ma trận và in ra tất cả các chỉ số của ô có giá trị đó. Sử dụng hàm để thực hiện nhiệm vụ này.
 //        int[] maxPosition = findMaxMatrix(matrix);
 //
-//        if (maxPosition != null) {
-//            System.out.println("Số lớn nhất trong ma trận là: " + matrix[maxPosition[0]][maxPosition[1]]);
-//            System.out.println("Số lớn nhất nằm trong mảng có vị trí: " );
-//            for (int i = 0; i < maxPosition.length; i++) {
-//                System.out.println("[" + maxPosition[i] + "]");
-//            }
-//
-//        } else {
-//            System.out.println("Không tìm thấy số lớn nhất trong ma trận.");
-//        }
-//
-////        int findMatrix = findMaxMatrix(matrix);
-////        System.out.println("Số lớn nhất trong ma trận là: " + findMatrix + " Thuộc mảng: " );
-//    }
-//    public static int[] findMaxMatrix (int [][] matrix){
-//        int max = matrix[0][0];
-//        int [] maxPosition = {0, 0};
-//        for (int i = 0; i < matrix.length; i++){
-//            for (int j = 0; j < matrix[i].length; j++){
-//                if (matrix[i][j] > max){
-//                    max = matrix[i][j];
-//                    maxPosition[0] = i;
-//                    maxPosition[1] = j;
-//                }
-//            }
-//        } return maxPosition;
-//    }
+
+        int findMatrix = findMaxMatrix(matrix);
+        System.out.println("Số lớn nhất trong ma trận là: " + findMatrix + " Thuộc mảng: ");
+        int findP = findPosition(matrix, findMatrix);
+    }
+    public static int findMaxMatrix (int [][] matrix){
+        int max = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++){
+            for (int j = 0; j < matrix[i].length; j++){
+                if (matrix[i][j] > max){
+                    max = matrix[i][j];
+                }
+            }
+        } return max;
+    }
+
+    public static int findPosition (int [][] matrix, int max) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][j] == max) {
+                    System.out.println("[" + i + "]" +"[" + j + "]");
+                }
+            }
+        } return max;
+    }
 
     //    Kiểm Tra Ma Trận Đối Xứng
 //    Viết một chương trình java để kiểm tra xem một ma trận có phải là ma trận đối xứng hay không.
@@ -91,16 +88,16 @@ public class Homework2 {
 //    Viết một chương trình java để tạo một mảng số nguyên chứa n số Fibonacci đầu tiên
 //    (n là một số nguyên được người dùng nhập vào). In ra mảng này.
 
-    public static int sumFibonacy (int n) {
-        System.out.println("Nhập số phần tử của mảng Fibo ");
-        Scanner inputN = new Scanner(System.in);
-
-        int n = inputN.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = inputN.nextInt();
-        }
-        inputN.close();
-    }
+//    public static int sumFibonacy (int n) {
+//        System.out.println("Nhập số phần tử của mảng Fibo ");
+//        Scanner inputN = new Scanner(System.in);
+//
+//        int n = inputN.nextInt();
+//        int[] arr = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            arr[i] = inputN.nextInt();
+//        }
+//        inputN.close();
+//    }
 }
 
